@@ -15,7 +15,7 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_employee_to_department
-      assert Department.new("Alice")
+      assert Department.new("Alice", "Department of Engineering")
   end
 
   def test_employee_name
@@ -26,7 +26,9 @@ class EmployeeReviewsTest < Minitest::Test
     assert_equal "$50,000", Employee.new("Alice", "Wonderland@wall.com", "919-234-6532", "$50,000").salary
   end
 
-
+  def test_department_name
+    assert_equal "Education", Department.new("Education").department_name
+  end
 
 
 

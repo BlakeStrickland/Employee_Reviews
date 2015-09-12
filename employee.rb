@@ -5,8 +5,13 @@ class Employee
     @email = email
     @phone = phone
     @salary = salary
+    @employees = []
   end
 
-  
+  def employees (employee)
+
+    @employees << employee
+    
+  end
 
 end
