@@ -19,6 +19,8 @@ class EmployeeReviewsTest < Minitest::Test
   def test_employee_to_department
     education = Department.new("Education")
     alice = Employee.new("alice", "Wonderland@wall.com", "919-234-6532", "$50,000")
+    red_queen = Employee.new("Red Queen", "Egocentric@narcissitic.com", "535-764-6334", 40000)
+
     education.add_employees(alice)
     assert_equal [alice], education.employees
   end
@@ -51,7 +53,13 @@ class EmployeeReviewsTest < Minitest::Test
     cheshire_the_cat = Employee.new("Cheshire the Cat", "Katnip@teatime.com", "234-452-3554", 100000)
     cheshire_the_cat.review = "test review"
     assert_equal "test review", cheshire_the_cat.review
-
   end
+
+  def test_satisfactorily
+    mad_hatter = Employee.new("Mad Hatter", "KooKooKachoo@madness.com", "650-456-6543", 120000)
+    mad_hatter.satisfactorily = true
+    assert_equal true, mad_hatter.satisfactorily
+  end
+
 
 end
