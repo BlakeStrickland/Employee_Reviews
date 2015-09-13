@@ -19,11 +19,8 @@ class EmployeeReviewsTest < Minitest::Test
   def test_employee_to_department
     education = Department.new("Education")
     alice = Employee.new("alice", "Wonderland@wall.com", "919-234-6532", "$50,000")
-
     education.add_employees(alice)
-
     assert_equal [alice], education.employees
-
   end
 
   def test_employee_name
@@ -38,7 +35,17 @@ class EmployeeReviewsTest < Minitest::Test
     assert_equal "Education", Department.new("Education").department_name
   end
 
-
+  def test_department_salary
+    engineering = Department.new("Engineering")
+    mad_hatter = Employee.new("Mad Hatter", "KooKooKachoo@madness.com", "650-456-6543", 120000)
+    engineering.add_employees(mad_hatter)
+    red_queen = Employee.new("Red Queen", "Egocentric@narcissitic.com", "535-764-6334", 40000)
+    engineering.add_employees(red_queen)
+    cheshire_the_cat = Employee.new("Cheshire the Cat", "Katnip@teatime.com", "234-452-3554", 100000)
+    engineering.add_employees(cheshire_the_cat)
+    #assert engineering.department_salary == 260000
+    assert_equal 260000, engineering.department_salary
+  end
 
 
 end
