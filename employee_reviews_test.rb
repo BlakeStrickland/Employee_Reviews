@@ -30,7 +30,7 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_department_name
-    assert_equal "Education", Department.new("Education").department.name
+    assert_equal "Education", Department.new("Education").department_name
   end
 
 

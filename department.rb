@@ -6,7 +6,7 @@ class Department
     @departments = []
   end
 
-  def department(department)
+  def department (department)
     @departments << department
   end
 
