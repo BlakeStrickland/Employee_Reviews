@@ -47,5 +47,11 @@ class EmployeeReviewsTest < Minitest::Test
     assert_equal 260000, engineering.department_salary
   end
 
+  def test_add_review
+    cheshire_the_cat = Employee.new("Cheshire the Cat", "Katnip@teatime.com", "234-452-3554", 100000)
+    cheshire_the_cat.review = "test review"
+    assert_equal "test review", cheshire_the_cat.review
+
+  end
 
 end
