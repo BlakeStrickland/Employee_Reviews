@@ -3,6 +3,7 @@ require 'minitest/pride'
 require './employee_review.rb'
 
 class EmployeeReviewsTest < Minitest::Test
+
   def test_initialize
     assert Department.new("Education")
     assert_raises(ArgumentError) do
@@ -11,11 +12,13 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_new_employee
-      assert Employee.new("Alice", "Wonderland@wall.com", "919-234-6532", "$50,000")
+    alice = Employee.new("Alice", "Wonderland@wall.com", "919-234-6532", "$50,000")
+    assert Employee.new(alice)
   end
 
   def test_employee_to_department
-      assert Department.new("Alice", "Department of Engineering")
+    education = Department.new("Education", "Alice")
+    assert Department.new(alice)
   end
 
   def test_employee_name
@@ -27,7 +30,7 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_department_name
-    assert_equal "Education", Department.new("Education").department_name
+    assert_equal "Education", Department.new("Education").department.name
   end
 
 

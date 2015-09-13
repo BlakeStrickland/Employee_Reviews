@@ -1,5 +1,5 @@
 class Employee
-  attr_reader :name, :email, :phone, :salary
+  attr_accessor :name, :email, :phone, :salary
   def initialize(name, email = "", phone = "", salary = "")
     @name = name
     @email = email
@@ -8,10 +8,8 @@ class Employee
     @employees = []
   end
 
-  def employees (employee)
-
-    @employees << employee
-    
+  def employees(new_employee)
+    @employees << new_employee
   end
 
 end

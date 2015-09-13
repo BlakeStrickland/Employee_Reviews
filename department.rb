@@ -1,15 +1,20 @@
 class Department
-  attr_reader :name, :department_name, :department_salary
-  def initialize(department_name, name = "", department_salary = "")
+  attr_accessor  :department_name, :department_salary
+  def initialize(department_name, department_salary = "?")
     @department_name = department_name
-    @name = name
     @department_salary = department_salary
-    @total_departments = []
+    @departments = []
   end
 
-  def department (department)
+  def department(department)
+    @departments << department
+  end
 
-    @total_departments << department  
+  def name
+    @name
+  end
 
+  def employees(employees)
+    @employees
   end
 end
