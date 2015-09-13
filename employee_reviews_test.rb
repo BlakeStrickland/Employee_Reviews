@@ -17,8 +17,13 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_employee_to_department
-    education = Department.new("Education", "Alice")
-    assert Department.new(alice)
+    education = Department.new("Education")
+    alice = Employee.new("alice", "Wonderland@wall.com", "919-234-6532", "$50,000")
+
+    education.add_employees(alice)
+
+    assert_equal [alice], education.employees
+
   end
 
   def test_employee_name

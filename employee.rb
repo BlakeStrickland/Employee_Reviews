@@ -5,10 +5,9 @@ class Employee
     @email = email
     @phone = phone
     @salary = salary
-    @employees = []
   end
 
-  def employees(new_employee)
+  def add_employees(new_employee)
     @employees << new_employee
   end
 
