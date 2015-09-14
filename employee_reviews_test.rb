@@ -61,11 +61,11 @@ class EmployeeReviewsTest < Minitest::Test
     assert_equal true, mad_hatter.satisfactorily
   end
 
-  # def test_raise
-  #   red_queen = Employee.new("Red Queen", "Egocentric@narcissitic.com", "535-764-6334", 40000)
-  #   red_queen.satisfactorily = true
-  #   assert_equal 48000, red_queen.raise_the_roof(8000)
-  #
+  def test_raise
+    red_queen = Employee.new("Red Queen", "Egocentric@narcissitic.com", "535-764-6334", 40000)
+    red_queen.satisfactorily = true
+    assert_equal 48000, red_queen.raise_the_roof(8000)
+  end
   # end
   # def test_raise
   #   department = Department.new("Crystal Palace")

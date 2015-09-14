@@ -14,8 +14,8 @@ class Employee
     @employees << new_employee
   end
 
-  # def raise_the_roof (amount)
-  #   @salary += amount
-  # end
+  def raise_the_roof (amount)
+    @salary += amount
+  end
 
 end
