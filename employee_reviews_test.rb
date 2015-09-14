@@ -39,11 +39,11 @@ class EmployeeReviewsTest < Minitest::Test
 
   def test_department_salary
     engineering = Department.new("Engineering")
-    mad_hatter = Employee.new("Mad Hatter", "KooKooKachoo@madness.com", "650-456-6543", 120000)
+    mad_hatter = Employee.new("Mad Hatter", "KooKooKachoo@teatime.com", "650-456-6543", 120000)
     engineering.add_employees(mad_hatter)
     red_queen = Employee.new("Red Queen", "Egocentric@narcissitic.com", "535-764-6334", 40000)
     engineering.add_employees(red_queen)
-    cheshire_the_cat = Employee.new("Cheshire the Cat", "Katnip@teatime.com", "234-452-3554", 100000)
+    cheshire_the_cat = Employee.new("Cheshire the Cat", "Katnip@madness.com", "234-452-3554", 100000)
     engineering.add_employees(cheshire_the_cat)
     #assert engineering.department_salary == 260000
     assert_equal 260000, engineering.department_salary
@@ -56,10 +56,21 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_satisfactorily
-    mad_hatter = Employee.new("Mad Hatter", "KooKooKachoo@madness.com", "650-456-6543", 120000)
+    mad_hatter = Employee.new("Mad Hatter", "KooKooKachoo@teatime.com", "650-456-6543", 120000)
     mad_hatter.satisfactorily = true
     assert_equal true, mad_hatter.satisfactorily
   end
 
-
+  # def test_raise
+  #   red_queen = Employee.new("Red Queen", "Egocentric@narcissitic.com", "535-764-6334", 40000)
+  #   red_queen.satisfactorily = true
+  #   assert_equal 48000, red_queen.raise_the_roof(8000)
+  #
+  # end
+  # def test_raise
+  #   department = Department.new("Crystal Palace")
+  #   red_queen = Employee.new("Red Queen", "Egocentric@narcissitic.com", "535-764-6334", 40000)
+  #   red_queen.satisfactorily = true
+  #   department.raise_the_roof("Red Queen", 8000)
+  # end
 end
